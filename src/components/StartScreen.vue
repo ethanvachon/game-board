@@ -29,10 +29,16 @@ export default {
         {
           id: 1,
           name: null,
+          health: 10,
+          resources: 0,
+          mercenaries: 0,
         },
         {
           id: 2,
           name: null,
+          health: 10,
+          resources: 0,
+          mercenaries: 0,
         }
       ]
     }
@@ -43,6 +49,9 @@ export default {
         this.players.push({
           id: this.playerCount + 1,
           name: null,
+          health: 10,
+          resources: 0,
+          mercenaries: 0,
         })
         this.playerCount++
       }
@@ -64,7 +73,5 @@ export default {
 </script>
 
 <style>
-.card {
-  width: 17em;
-}
+
 </style>
