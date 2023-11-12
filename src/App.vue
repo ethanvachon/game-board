@@ -4,20 +4,28 @@
       <div style="height:inherit" v-else>
 
 
-
+        <div v-for="planet in ['1', '2', '3', '4']" :key="planet">
+          <img src="@/assets/planet1.png">
+        </div>
 
         <div id="player-row" class="d-flex justify-content-around">
-          <div v-for="player in players" :key="player">
-            <p class="text-success" v-if="playerTurn==player.id">Your Turn</p>
+          <div class="d-flex justify-content-end flex-column" v-for="player in players" :key="player">
+            <p class="text-center text-success" v-if="playerTurn==player.id">Your Turn</p>
             <div class="card">
-              <div class="card-header d-flex justify-content-between align-items-end">
-                <p>{{player.name}}</p>
-                <p class="m-0">HP: {{player.health}}</p>
+              <div class="card-header d-flex justify-content-between">
+                <div class="d-flex flex-column justify-content-between">
+                  <p class="m-0">{{player.name}}</p>
+                  <p class="m-0">HP: {{player.health}}</p>
+                </div>
+                
+                <div class="d-flex flex-column justify-content-between">
+                  <p class="m-0">Defense: {{player.mercenaries}}</p>
+                  <p class="m-0">${{player.resources}}</p>
+                </div>
               </div>
               <div class="card-body">
-                <p class="m-0">${{player.resources}}</p>
-                <button class="btn btn-outline-primary" >Hire Mercenaries ($10)</button>
-                <button class="btn btn-outline-primary">Next Planet ($100)</button>
+                <button class="btn btn-outline-primary my-1 w-100" >Buy Defenses ($10)</button>
+                <button class="btn btn-outline-primary my-1 w-100">Next Planet ($100)</button>
               </div>
             </div>
           </div>
