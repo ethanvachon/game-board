@@ -1,6 +1,6 @@
 <template>
   <div class="w-100 h-100 d-flex flex-column justify-content-center align-items-center">
-    <h1>Space Adventures</h1>
+    <h1 class="text-white mb-5">Space Adventures</h1>
     <div class="card">
       <div class="card-header">
         <h5 class="m-0">Start Game</h5>
