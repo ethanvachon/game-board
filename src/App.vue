@@ -79,8 +79,8 @@
               </div>
               <div class="card-body">
                 <button class="btn btn-outline-primary my-1 w-100" :disabled="playerTurn==player.id && (viewDice==false&&showEvent==false) ? false : true" @click="buyDefenses()">Buy Defenses ($25)</button>
-                <button class="btn btn-outline-primary my-1 w-100" :disabled="playerTurn==player.id && (viewDice==false&&showEvent==false) ? false : true" @click="upgradeMining()">Upgrade Mining ($100)</button>
-                <button class="btn btn-outline-primary my-1 w-100" :disabled="playerTurn==player.id && (viewDice==false&&showEvent==false) ? false : true" @click="nextPlanet()">Next Planet ($500)</button>
+                <button class="btn btn-outline-primary my-1 w-100" :disabled="playerTurn==player.id && (viewDice==false&&showEvent==false) ? false : true" @click="upgradeMining()">Upgrade Mining ($50)</button>
+                <button class="btn btn-outline-primary my-1 w-100" :disabled="playerTurn==player.id && (viewDice==false&&showEvent==false) ? false : true" @click="nextPlanet()">Next Planet ($250)</button>
                 <button class="btn btn-outline-primary my-1 w-100" :disabled="playerTurn==player.id && (viewDice==false&&showEvent==false) ? false : true" @click="nextTurn()">End Turn</button>
               </div>
             </div>
@@ -161,15 +161,15 @@ export default {
     },
     upgradeMining () {
       const player= this.players.find(p=>p.id==this.playerTurn);
-      if(player.resources >= 100) {
-        player.resources -= 100
+      if(player.resources >= 50) {
+        player.resources -= 50
         player.multiplier += 0.1
       }
     },
     nextPlanet () {
       const player= this.players.find(p=>p.id==this.playerTurn);
-      if(player.resources >= 500) {
-        player.resources -= 500
+      if(player.resources >= 250) {
+        player.resources -= 250
         for(let i = 1; i <= 4; i++) {
           if(this[`planet${i}`].filter(p => p==player.id).length == 1) {
             if(i==4) {
